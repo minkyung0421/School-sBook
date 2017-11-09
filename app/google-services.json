@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "107494698476",
+    "firebase_url": "https://school-sbook.firebaseio.com",
+    "project_id": "school-sbook",
+    "storage_bucket": "school-sbook.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107494698476:android:b16d54da4513e8fc",
+        "android_client_info": {
+          "package_name": "com.example.schoolsbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107494698476-f9etepqlfujuea1spr4s7ptmht09sh04.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYn7CWgxjb3XnOgsC6qIIWJW6EeTKoKJI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
