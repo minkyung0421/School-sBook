@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SCHOOL\'SBOOK</string>
+    <string name="action_settings">Settings</string>
+
 </resources>

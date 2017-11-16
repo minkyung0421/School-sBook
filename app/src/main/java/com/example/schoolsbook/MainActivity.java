@@ -7,8 +7,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.schoolsbook.Scheule.Schedule;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager pager;
@@ -22,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         setContentView(R.layout.activity_main);
+
         pager = (ViewPager) findViewById(R.id.pager);
         Button btn_homepage = (Button) findViewById(R.id.btn_homepage);
         Button btn_schedule = (Button) findViewById(R.id.btn_schedule);

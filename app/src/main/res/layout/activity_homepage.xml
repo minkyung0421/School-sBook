@@ -9,6 +9,9 @@
         android:layout_height="match_parent"
         android:textSize="30dp"
         android:textStyle="normal"
-        android:text="첫번째 페이지!!!"/>
+        android:text="첫번째 페이지!!!"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

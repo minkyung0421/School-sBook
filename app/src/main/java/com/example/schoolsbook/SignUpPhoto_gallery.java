@@ -132,7 +132,7 @@ public class SignUpPhoto_gallery extends AppCompatActivity implements View.OnCli
                     Bitmap photo = extras.getParcelable("data"); //CROP된 BITMAP
                     iv_UserPhoto.setImageBitmap(photo); //레이아웃 이미지칸에 CROP된 BITMAP을 보여준다
 
-                    storeCropImage(photo, filePath); //CROP된 이미지를 외부저장소, 앨범에 저장한다
+                    //storeCropImage(photo, filePath); //CROP된 이미지를 외부저장소, 앨범에 저장한다
                     absoultePath = filePath;
                     break;
                 }
@@ -145,32 +145,32 @@ public class SignUpPhoto_gallery extends AppCompatActivity implements View.OnCli
         }
     }
 
-    //bitmap을 저장하는 부분
-    private void storeCropImage(Bitmap bitmap, String filePath){
-        //smartWheel폴더를 생성하여 이미지를 저장하는 방식
-        String dirPath = Environment.getDownloadCacheDirectory().getAbsolutePath() + "/SmartWheel";
-        File directory_SmartWheel = new File(dirPath);
-
-        if(!directory_SmartWheel.exists()){//디렉터리에 폴더가 없다면
-            directory_SmartWheel.mkdir();
-        }
-
-        File copyFile = new File(filePath);
-        BufferedOutputStream out = null;
-
-        try{
-            copyFile.createNewFile();
-            out = new BufferedOutputStream(new FileOutputStream(copyFile));
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-
-            sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(copyFile)));
-
-            out.flush();
-            out.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
+//    //bitmap을 저장하는 부분
+//    private void storeCropImage(Bitmap bitmap, String filePath){
+//        //smartWheel폴더를 생성하여 이미지를 저장하는 방식
+//        String dirPath = Environment.getDownloadCacheDirectory().getAbsolutePath() + "/SmartWheel";
+//        File directory_SmartWheel = new File(dirPath);
+//
+//        if(!directory_SmartWheel.exists()){//디렉터리에 폴더가 없다면
+//            directory_SmartWheel.mkdir();
+//        }
+//
+//        File copyFile = new File(filePath);
+//        BufferedOutputStream out = null;
+//
+//        try{
+//            copyFile.createNewFile();
+//            out = new BufferedOutputStream(new FileOutputStream(copyFile));
+//            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+//
+//            sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(copyFile)));
+//
+//            out.flush();
+//            out.close();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
 
 
 
