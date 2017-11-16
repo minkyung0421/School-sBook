@@ -22,7 +22,7 @@ import butterknife.OnClick;
 
 public class SwappableBasicActivity_schedule extends AppCompatActivity implements OnDateSelectedListener {
 
-    private final OneDayDecorator_schedule oneDayDecorator = new OneDayDecorator_schedule();
+    private final OneDayDecorator oneDayDecorator = new OneDayDecorator();
 
     @BindView(R.id.calendarView)
     MaterialCalendarView widget;

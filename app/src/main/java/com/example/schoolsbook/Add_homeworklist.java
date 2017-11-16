@@ -5,51 +5,72 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by 최민경 on 2017-11-15.
  */
 
 public class Add_homeworklist extends AppCompatActivity {
+    Homework hh = new Homework(this);
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference databaseRef = database.getReference("Homework_info");
 
-    public Add_homeworklist(Homework homework){};
+    ArrayList<String> name = new ArrayList<>();
+    ListView listView;
 
-    protected void onCreate(Bundle saveInstanceState){
-        super.onCreate(saveInstanceState);
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homework);
 
-        //빈 데이터 리스트 생성
-        final ArrayList<String> items = new ArrayList<String>();
-        //ArrayAdapter생성 아이템 view를 선택(single choice) 가능하도록 만듬
-        final ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simplae_list_item_single_choice, items);
+        listView = (ListView) findViewById(R.id.listView1);
+    }
 
-        //listView 생성 및 adapter지정
-        final ListView listView = (ListView)findViewById(R.id.listview1);
-        listView.setAdapter(adapter);
-        Intent intent = getIntent();
-        String code = intent.getStringExtra("code");
-
-        FirebaseDatabase.getInstance().getReference("Homework_info").addValueEventListener(new ValueEventListener() {
+    //RETRIEVE
+    private void retrieveData(){
+        databaseRef.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Intent intent = getIntent();
-                String code = intent.getStringExtra("code");
-                String homework_name = (String)dataSnapshot.child(code).child("homework_info").getValue();
-                String finish_time = (String)dataSnapshot.child(code).child("finish_time").getValue();
-                String info = (String)dataSnapshot.child(code).child("info").getValue();
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Log.i("여기 들어와?", "여기이이이이이이이이이이이");
+                getUpdates(dataSnapshot);
+            }
 
-                Log.i("값을 받아오자!", homework_name);
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                getUpdates(dataSnapshot);
+            }
 
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
 
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
             }
 
@@ -57,6 +78,21 @@ public class Add_homeworklist extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        })
+        });
     }
+
+    private void getUpdates(DataSnapshot ds) {
+        name.clear();
+
+        if(name.size() > 0){
+            ArrayAdapter adapter = new ArrayAdapter(Add_homeworklist.this, R.layout.listitem_homework, name);
+            listView.setAdapter(adapter);
+        }else{
+            Toast.makeText(Add_homeworklist.this, "No data", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 }
+
+

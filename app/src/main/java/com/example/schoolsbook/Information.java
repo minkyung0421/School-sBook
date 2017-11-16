@@ -4,6 +4,8 @@ package com.example.schoolsbook;
  * Created by 최민경 on 2017-11-14.
  */
 
+
+
 public class Information {
     String id;
     String homework_name;

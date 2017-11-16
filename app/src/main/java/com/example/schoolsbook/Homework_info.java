@@ -83,7 +83,7 @@ public class Homework_info extends AppCompatActivity {
         });
 
 
-        }
+    }
 
     private void addForm() {
         Log.i("애드폼이다 제발 들어와", "제발들어오면안돼?");

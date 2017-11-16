@@ -11,9 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -23,8 +31,6 @@ import java.util.ArrayList;
 
 public class Homework extends Fragment{
     Button addwork;
-
-    Add_homeworklist ad = new Add_homeworklist(this);
 
     public Homework(){
 
@@ -41,16 +47,10 @@ public class Homework extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState){
         RelativeLayout layout = (RelativeLayout)inflater.inflate(R.layout.activity_homework, container, false);
-
         addwork =(Button)layout.findViewById(R.id.addwork);
         addwork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int count;
-                count = adapter.getCount();
-
-                //아이템추가
-                items.add("LIST" + Integer.toString(count + 1));
 
                 Log.i("좀비", "짜증나ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ");
                 try {
@@ -61,6 +61,14 @@ public class Homework extends Fragment{
                 }
             }
         });
+
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference dref = database.getReference("Homework_info").child("Info_Details");
+        
+
+        ListAdapter workAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
+
 
         return layout;
     }
