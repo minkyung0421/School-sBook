@@ -18,12 +18,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -39,7 +36,6 @@ public class Homework extends Fragment {
     private ListView lvProduct;
     private ProductListAdapter adapter;
     private List<Product> mProuctList;
-
 
     public Homework() {
 
@@ -76,6 +72,9 @@ public class Homework extends Fragment {
 
         lvProduct = (ListView)layout.findViewById(R.id.listview_product);
 
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+
+        
         mProuctList = new ArrayList<>();
 
         //Add sample data for List
