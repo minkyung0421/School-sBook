@@ -1,14 +1,13 @@
-package com.example.schoolsbook.Homework;
+package com.example.schoolsbook.TestHomework;
 
 /**
- * Created by 최민경 on 2017-11-14.
+ * Created by 최민경 on 2017-11-19.
  */
 
 
-
-public class Information {
+public class Spacecraft {
     String name,time,info;
-    public Information() {
+    public Spacecraft() {
     }
     public String getName() {
         return name;
@@ -29,5 +28,3 @@ public class Information {
         this.info = info;
     }
 }
-
-

@@ -12,32 +12,6 @@
         android:orientation="horizontal">
         /></LinearLayout>
 
-    <EditText
-        android:id="@+id/memo_edit"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="18dp"
-        android:background="#ffffff"
-        android:gravity="top"
-        android:hint="메모할 내용을 입력하세요" />
-
-    <TextView
-        android:id="@+id/memo_title"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/memo_edit"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:text="메모"
-        android:textSize="20dp" />
-
-
     <ImageView
         android:id="@+id/user_image"
         android:layout_width="200dp"

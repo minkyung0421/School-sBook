@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3d3d3d</color>
     <color name="colorPrimaryDark">#ffe948</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="fabPrimary">#45A1F5</color>
+    <color name="fabPressed">#6EB5F7</color>
+    <color name="fabRipple">#AED6FC</color>
 </resources>

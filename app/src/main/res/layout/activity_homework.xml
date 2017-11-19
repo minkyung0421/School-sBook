@@ -6,29 +6,24 @@
     android:background="#d1d1d1"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/addwork"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:text="추가하기"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="43dp" />
-
-    <ListView
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listview_product"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:dividerHeight="10dp"
-        android:divider="#d1d1d1"
-        ></ListView>
+        android:fitsSystemWindows="true"
+        tools:context="com.example.schoolsbook.Homework.InputHomework">
 
+        <include layout="@layout/content_main" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@android:drawable/ic_input_add" />
+    </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>
 
 

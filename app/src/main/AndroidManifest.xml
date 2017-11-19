@@ -19,9 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Homework_info"/>
-        <activity android:name=".SignUpPhoto_gallery"/>
-        <activity android:name=".Scheule.Calendar_schedule"/>
+        <activity android:name=".Scheule.Calendar_schedule"></activity>
+        <activity android:name=".Homework.InputHomework"></activity>
+        <activity android:name=".SignUpPhoto_gallery"></activity>
+
     </application>
 
 </manifest>
