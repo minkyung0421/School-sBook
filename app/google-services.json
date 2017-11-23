@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "107494698476-bj609sta5qi86gspvs9dq3tk51pv0kp0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.schoolsbook",
+            "certificate_hash": "d98bef6f891ccea73743260f982ee9a240163637"
+          }
+        },
+        {
           "client_id": "107494698476-f9etepqlfujuea1spr4s7ptmht09sh04.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107494698476-f9etepqlfujuea1spr4s7ptmht09sh04.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

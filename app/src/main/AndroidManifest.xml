@@ -2,27 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.schoolsbook">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/schoolbook"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:windowSoftInputMode="stateHidden">
+        <activity android:name=".Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Scheule.Calendar_schedule"></activity>
-        <activity android:name=".Homework.InputHomework"></activity>
-        <activity android:name=".SignUpPhoto_gallery"></activity>
-
+        <activity android:name=".CodeActivity" />
+        <activity android:name=".FirstForm" />
+        <activity android:name=".Homework" />
+        <activity android:name=".Homepage_schoolbook" />
+        <activity android:name=".InputGallery" />
     </application>
 
 </manifest>

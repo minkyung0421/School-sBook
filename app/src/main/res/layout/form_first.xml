@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3d3d3d"
+    android:orientation="vertical"
+    tools:context="com.example.schoolsbook.FirstForm"
+    android:weightSum="1"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="680dp"
+        android:layout_height="74dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="63dp">
+
+        <TextView
+            android:id="@+id/학교"
+            android:layout_width="245dp"
+            android:layout_height="49dp"
+            android:text="         학교"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:typeface="sans"
+            tools:layout_editor_absoluteX="873dp"
+            tools:layout_editor_absoluteY="60dp" />
+
+        <EditText
+            android:id="@+id/학교_e"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="451dp"
+            tools:layout_editor_absoluteY="149dp"
+            android:textColor="#ffffff"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="680dp"
+        android:layout_height="74dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="63dp">
+
+        <TextView
+            android:id="@+id/학년"
+            android:layout_width="245dp"
+            android:layout_height="49dp"
+            android:text="         학년"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:typeface="sans"
+            tools:layout_editor_absoluteX="873dp"
+            tools:layout_editor_absoluteY="60dp" />
+
+        <EditText
+            android:id="@+id/학년_e"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#ffffff"
+            tools:layout_editor_absoluteX="451dp"
+            tools:layout_editor_absoluteY="149dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="680dp"
+        android:layout_height="74dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="63dp">
+
+        <TextView
+            android:id="@+id/반"
+            android:layout_width="245dp"
+            android:layout_height="49dp"
+            android:text="         반"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:typeface="sans"
+            tools:layout_editor_absoluteX="873dp"
+            tools:layout_editor_absoluteY="60dp" />
+
+        <EditText
+            android:id="@+id/반_e"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#ffffff"
+            tools:layout_editor_absoluteX="451dp"
+            tools:layout_editor_absoluteY="149dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="680dp"
+        android:layout_height="74dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="63dp">
+
+        <TextView
+            android:id="@+id/인증키"
+            android:layout_width="245dp"
+            android:layout_height="49dp"
+            android:text="         인증키"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:typeface="sans"
+            tools:layout_editor_absoluteX="873dp"
+            tools:layout_editor_absoluteY="60dp" />
+
+        <EditText
+            android:id="@+id/인증키_e"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="#ffffff"
+            tools:layout_editor_absoluteX="451dp"
+            tools:layout_editor_absoluteY="149dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/시간표"
+        android:layout_width="110dp"
+        android:layout_height="49dp"
+        android:text="시간표"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="877dp"
+        tools:layout_editor_absoluteY="47dp"
+        android:layout_weight="0.06"
+        android:gravity="center"
+        android:layout_marginTop="30dp"/>
+
+    <TableLayout
+        android:layout_width="379dp"
+        android:layout_height="187dp"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="591dp"
+        android:layout_weight="0.79">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:id="@+id/월"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:text="월"
+                tools:layout_editor_absoluteX="1072dp"
+                tools:layout_editor_absoluteY="149dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:background="@drawable/back"
+                />
+
+            <TextView
+                android:id="@+id/화"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text="화"
+                tools:layout_editor_absoluteX="363dp"
+                tools:layout_editor_absoluteY="745dp"
+                android:gravity="center"
+                android:background="@drawable/back"
+                android:textColor="#000000"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/수"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text="수"
+                tools:layout_editor_absoluteX="51dp"
+                tools:layout_editor_absoluteY="745dp"
+                android:gravity="center"
+                android:background="@drawable/back"
+                android:textColor="#000000"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/목"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text="목"
+                tools:layout_editor_absoluteX="972dp"
+                tools:layout_editor_absoluteY="149dp"
+                android:gravity="center"
+                android:background="@drawable/back"
+                android:textColor="#000000"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/금"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:text="금"
+                android:background="@drawable/back"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                tools:layout_editor_absoluteX="873dp"
+                tools:layout_editor_absoluteY="149dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/mon_1"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/tue_1"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/wed_1"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/thu_1"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/fri_1"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <EditText
+                android:id="@+id/mon_2"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/tue_2"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/wed_2"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/thu_2"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/fri_2"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <EditText
+                android:id="@+id/mon_3"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/tue_3"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/wed_3"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/thu_3"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/fri_3"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/mon_4"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/tue_4"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/wed_4"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/thu_4"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/fri_4"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/mon_5"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/tue_5"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/wed_5"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/thu_5"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/fri_5"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/mon_6"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/tue_6"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/wed_6"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/thu_6"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/fri_6"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <EditText
+                android:id="@+id/mon_7"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/tue_7"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/wed_7"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/thu_7"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/fri_7"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff"/>
+        </TableRow>
+    </TableLayout>
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="0.06"
+        android:background="@drawable/makegroup" />
+
+</LinearLayout>
