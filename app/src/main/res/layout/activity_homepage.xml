@@ -11,11 +11,11 @@
     android:weightSum="1">
 
 
-    <ScrollView
-        android:id="@+id/scrollview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+    <!--<ScrollView-->
+        <!--android:id="@+id/scrollview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--&gt;-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,7 +58,7 @@
 
             <LinearLayout
                 android:layout_width="601dp"
-                android:layout_height="771dp"
+                android:layout_height="791dp"
                 android:layout_gravity="center"
                 android:orientation="vertical"
                 android:weightSum="1">
@@ -80,6 +80,7 @@
                             android:layout_margin="15dip"
                             android:background="@drawable/back"
                             android:gravity="center"
+                            android:backgroundTint="@color/colorPrimary"
                             android:textColor="#ffffff"
                             android:textSize="30sp" />
 
@@ -90,6 +91,7 @@
                             android:layout_margin="15dip"
                             android:background="@drawable/back"
                             android:gravity="center"
+                            android:backgroundTint="@color/colorPrimary"
                             android:text="월"
                             android:textColor="#ffffff"
                             android:textSize="30sp" />
@@ -101,6 +103,7 @@
                             android:layout_margin="15dip"
                             android:background="@drawable/back"
                             android:gravity="center"
+                            android:backgroundTint="@color/colorPrimary"
                             android:text="화"
                             android:textColor="#ffffff"
                             android:textSize="30sp" />
@@ -112,6 +115,7 @@
                             android:layout_margin="15dip"
                             android:background="@drawable/back"
                             android:gravity="center"
+                            android:backgroundTint="@color/colorPrimary"
                             android:text="수"
                             android:textColor="#ffffff"
                             android:textSize="30sp" />
@@ -123,6 +127,7 @@
                             android:layout_margin="15dip"
                             android:background="@drawable/back"
                             android:gravity="center"
+                            android:backgroundTint="@color/colorPrimary"
                             android:text="목"
                             android:textColor="#ffffff"
                             android:textSize="30sp" />
@@ -131,10 +136,10 @@
                             android:id="@+id/금"
                             android:layout_width="65dp"
                             android:layout_height="65dp"
-
                             android:layout_margin="15dip"
                             android:background="@drawable/back"
                             android:gravity="center"
+                            android:backgroundTint="@color/colorPrimary"
                             android:text="금"
                             android:textColor="#ffffff"
                             android:textSize="30sp" />
@@ -154,7 +159,7 @@
                             android:gravity="center"
                             android:text="1"
                             android:textColor="#ffffff"
-                            android:textSize="30sp" />
+                            android:textSize="25sp" />
 
                         <TextView
                             android:id="@+id/mon_1"
@@ -221,7 +226,7 @@
                             android:gravity="center"
                             android:text="2"
                             android:textColor="#ffffff"
-                            android:textSize="30sp" />
+                            android:textSize="25sp" />
 
                         <TextView
                             android:id="@+id/mon_2"
@@ -288,7 +293,7 @@
                             android:gravity="center"
                             android:text="3"
                             android:textColor="#ffffff"
-                            android:textSize="30sp" />
+                            android:textSize="25sp" />
 
                         <TextView
                             android:id="@+id/mon_3"
@@ -355,7 +360,7 @@
                             android:gravity="center"
                             android:text="4"
                             android:textColor="#ffffff"
-                            android:textSize="30sp" />
+                            android:textSize="25sp" />
 
                         <TextView
                             android:id="@+id/mon_4"
@@ -422,7 +427,7 @@
                             android:gravity="center"
                             android:text="5"
                             android:textColor="#ffffff"
-                            android:textSize="30sp" />
+                            android:textSize="25sp" />
 
                         <TextView
                             android:id="@+id/mon_5"
@@ -489,7 +494,7 @@
                             android:gravity="center"
                             android:text="6"
                             android:textColor="#ffffff"
-                            android:textSize="30sp" />
+                            android:textSize="25sp" />
 
                         <TextView
                             android:id="@+id/mon_6"
@@ -556,7 +561,7 @@
                             android:gravity="center"
                             android:text="7"
                             android:textColor="#ffffff"
-                            android:textSize="30sp" />
+                            android:textSize="25sp" />
 
                         <TextView
                             android:id="@+id/mon_7"
@@ -615,7 +620,7 @@
 
             <LinearLayout
                 android:layout_width="707dp"
-                android:layout_height="354dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:weightSum="1"
                 android:layout_gravity="center">
@@ -651,17 +656,18 @@
                         android:id="@+id/enter"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="입력"
+                        android:layout_marginTop="20dp"
+                        android:text="추가하기"
                         android:background="@color/colorPrimaryDark"/>
                 </LinearLayout>
 
                 <ListView
                     android:id="@+id/listViewPhones"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="198dp"
                     />
 
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+    <!--</ScrollView>-->
 </LinearLayout>

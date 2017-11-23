@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffe948"
+    android:background="#3d3d3d"
     android:orientation="vertical"
     android:weightSum="1">
 
@@ -10,11 +10,16 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="49dp"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        android:textColor="#ffff"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="49dp"
+        android:textSize="15dp"
+        android:textColor="@color/colorAccent"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
 </LinearLayout>

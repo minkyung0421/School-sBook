@@ -20,6 +20,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -87,6 +88,33 @@ public class InputGallery extends AppCompatActivity {
 
         imageList = new ArrayList<>();
 
+        ImageButton homepage = (ImageButton)findViewById(R.id.homepage);
+        homepage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String code  = intent.getStringExtra("code");
+                Intent i = new Intent(InputGallery.this, Homepage_schoolbook.class);
+                i.putExtra("code",code);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        ImageButton homework = (ImageButton) findViewById(R.id.homework);
+        homework.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String code  = intent.getStringExtra("code");
+                Intent i = new Intent(InputGallery.this, Homework.class);
+                i.putExtra("code",code);
+                startActivity(i);
+                finish();
+            }
+        });
+
+
     }
 
     public void btnBrowse_Click(View v) {
@@ -145,6 +173,7 @@ public class InputGallery extends AppCompatActivity {
                     mDatabaseRef.child(uploadId).setValue(imageUpload);
 
                     txtImageName.setText("");
+                    imgView.setImageResource(android.R.color.transparent);
                 }
             })
                     .addOnFailureListener(new OnFailureListener() {
@@ -203,73 +232,4 @@ public class InputGallery extends AppCompatActivity {
         });
     }
 }
-
-//    private void showUpdateDeleteDialog(final String PhoneId, String phonename) {
-//
-//        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-//        LayoutInflater inflater = getLayoutInflater();
-//        final View dialogView = inflater.inflate(R.layout.modify_phone, null);
-//        dialogBuilder.setView(dialogView);
-//
-//        final EditText editTextName = (EditText) dialogView.findViewById(R.id.editTextname);
-//        final EditText editTextPhone = (EditText) dialogView.findViewById(R.id.editTextphone);
-//        final Button buttonUpdate = (Button) dialogView.findViewById(R.id.buttonUpdate);
-//        final Button buttonDelete = (Button) dialogView.findViewById(R.id.buttonDelete);
-//
-//        dialogBuilder.setTitle("Updatinng Phones" + phonename);
-//        final AlertDialog b = dialogBuilder.create();
-//        b.show();
-//
-//
-//        buttonUpdate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String name = editTextName.getText().toString().trim();
-//                String phone = editTextPhone.getText().toString().trim();
-//                if (!TextUtils.isEmpty(name)) {
-//                    updatePhone(PhoneId, name, phone);
-//                    b.dismiss();
-//                }
-//            }
-//        });
-//
-//        buttonDelete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                deletePhone(PhoneId);
-//                b.dismiss();
-//            }
-//        });
-//
-//    }
-//    /*
-//    * This method is saving a new artist to the
-//    * Firebase Realtime Database
-//    * */
-//    private boolean deletePhone(String id) {
-//        //getting the specified artist reference
-//        Intent intent = getIntent();
-//        String code  = intent.getStringExtra("code");
-//        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("new Group").child(code).child("image").child(id);
-//
-//        //removing artist
-//        dR.removeValue();
-//
-//        Toast.makeText(getApplicationContext(), "삭제됨", Toast.LENGTH_LONG).show();
-//
-//        return true;
-//    }
-//
-//    private boolean updatePhone(String id, String name, String phone) {
-//        //getting the specified artist reference
-//        Intent intent = getIntent();
-//        String code  = intent.getStringExtra("code");
-//        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("new Group").child(code).child("image").child(id);
-//
-//        //updating artist
-//        Phone p = new Phone(id,name,phone);
-//        dR.setValue(p);
-//        Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_LONG).show();
-//        return true;
-//    }
 

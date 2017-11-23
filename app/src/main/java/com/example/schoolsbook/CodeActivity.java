@@ -55,12 +55,11 @@ public class CodeActivity extends AppCompatActivity {
                                     Log.d("오오오오", kk);
                                     if (!(kk.equals(code))) {
                                         Log.d("이거이거이거", "으헝");
-                                        Toast.makeText(CodeActivity.this, "제대로 된 값 입력바람", Toast.LENGTH_LONG);
-
+                                        Toast.makeText(CodeActivity.this, "없는 키입니다!", Toast.LENGTH_LONG);
                                     }
                                 }
                                 if (nn.equals(code)) {
-                                    Intent intent = new Intent(CodeActivity.this, Homework.class);
+                                    Intent intent = new Intent(CodeActivity.this, Homepage_schoolbook.class);
                                     intent.putExtra("code",code);
                                     startActivity(intent);
                                     Log.d("이거는2nn", nn);

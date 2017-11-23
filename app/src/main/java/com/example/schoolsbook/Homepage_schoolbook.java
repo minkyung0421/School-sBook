@@ -36,7 +36,6 @@ public class Homepage_schoolbook extends AppCompatActivity {
     DatabaseReference databasePhones;
 
     ListView listViewPhones;
-    ScrollView scrollview;
 
 
     List<Phone> phoneList;
@@ -60,7 +59,6 @@ public class Homepage_schoolbook extends AppCompatActivity {
         editPhone = (EditText)findViewById(R.id.phone);
 
         listViewPhones = (ListView)findViewById(R.id.listViewPhones);
-        scrollview = (ScrollView)findViewById(R.id.scrollview);
 
         phoneList = new ArrayList<>();
 
@@ -80,17 +78,6 @@ public class Homepage_schoolbook extends AppCompatActivity {
                 return true;
             }
         });
-        listViewPhones.setOnTouchListener(new View.OnTouchListener() {
-
-            public boolean onTouch(View v, MotionEvent event) {
-
-                scrollview.requestDisallowInterceptTouchEvent(true);
-
-                return false;
-
-            }
-
-        });
 
         ImageButton homework = (ImageButton) findViewById(R.id.homework);
         homework.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +88,20 @@ public class Homepage_schoolbook extends AppCompatActivity {
                 Intent i = new Intent(Homepage_schoolbook.this, Homework.class);
                 i.putExtra("code",code);
                 startActivity(i);
+                finish();
+            }
+        });
+
+        ImageButton gallery = (ImageButton)findViewById(R.id.gallery);
+        gallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String code  = intent.getStringExtra("code");
+                Intent i = new Intent(Homepage_schoolbook.this, InputGallery.class);
+                i.putExtra("code",code);
+                startActivity(i);
+                finish();
             }
         });
     }
@@ -146,7 +147,7 @@ public class Homepage_schoolbook extends AppCompatActivity {
         final Button buttonUpdate = (Button) dialogView.findViewById(R.id.buttonUpdate);
         final Button buttonDelete = (Button) dialogView.findViewById(R.id.buttonDelete);
 
-        dialogBuilder.setTitle("Updatinng Phones" + phonename);
+        dialogBuilder.setTitle("Updatinng Phones");
         final AlertDialog b = dialogBuilder.create();
         b.show();
 
@@ -185,7 +186,7 @@ public class Homepage_schoolbook extends AppCompatActivity {
         //removing artist
         dR.removeValue();
 
-        Toast.makeText(getApplicationContext(), "삭제됨", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "전화번호 삭제 완료!", Toast.LENGTH_LONG).show();
 
         return true;
     }
@@ -199,10 +200,11 @@ public class Homepage_schoolbook extends AppCompatActivity {
         //updating artist
         Phone p = new Phone(id,name,phone);
         dR.setValue(p);
-        Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "전화번호 업데이트 완료!", Toast.LENGTH_LONG).show();
         return true;
     }
     private void addPhone() {
+
         //getting the values to save
         String name = editName.getText().toString().trim();
         String phone = editPhone.getText().toString().trim();
@@ -222,12 +224,11 @@ public class Homepage_schoolbook extends AppCompatActivity {
             editPhone.setText("");
 
             //displaying a success toast
-            Toast.makeText(this, "added", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "추가 완료", Toast.LENGTH_LONG).show();
         } else {
             //if the value is not given displaying a toast
-            Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "이름을 입력해 주세요!", Toast.LENGTH_LONG).show();
         }
-
         FirebaseDatabase.getInstance().getReference("new Group").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -353,5 +354,6 @@ public class Homepage_schoolbook extends AppCompatActivity {
 
             }
         });
+
     }
 }

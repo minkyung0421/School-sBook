@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 /**
@@ -32,6 +34,7 @@ public class AddHomeworkList extends ArrayAdapter<AddHomework> {
         TextView yyTxt = (TextView)listViewItem.findViewById(R.id.yy);
         TextView mmTxt = (TextView)listViewItem.findViewById(R.id.mm);
         TextView ddTxt = (TextView) listViewItem.findViewById(R.id.dd);
+        TextView wwTxt = (TextView) listViewItem.findViewById(R.id.ww);
         TextView infoTxt = (TextView)listViewItem.findViewById(R.id.infoTxt);
 
         AddHomework homework = workList.get(position);
@@ -39,6 +42,7 @@ public class AddHomeworkList extends ArrayAdapter<AddHomework> {
         yyTxt.setText(homework.getYy_time());
         mmTxt.setText(homework.getMm_time());
         ddTxt.setText(homework.getDd_time());
+        wwTxt.setText(homework.getWw_time());
         infoTxt.setText(homework.getInfo());
 
         return listViewItem;

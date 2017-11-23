@@ -557,16 +557,16 @@
         </TableRow>
     </TableLayout>
 
-    <ImageButton
+    <Button
         android:id="@+id/button"
         android:layout_width="250dp"
-        android:layout_height="80dp"
+        android:layout_height="76dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
-        android:layout_weight="0.06"
-        android:background="@drawable/makegroup" />
+        android:text="그룹 만들기"
+        android:background="@color/colorAccent" />
 
 </LinearLayout>

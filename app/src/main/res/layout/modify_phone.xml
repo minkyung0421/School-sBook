@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffe948"
     android:weightSum="1">
 
     <LinearLayout
@@ -15,7 +14,9 @@
             android:layout_width="165dp"
             android:layout_height="111dp"
             android:ems="10"
-            android:hint="enter new name"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:hint="새 이름 입력"
             android:inputType="textPersonName" />
 
         <EditText
@@ -23,14 +24,15 @@
             android:layout_width="match_parent"
             android:layout_height="111dp"
             android:ems="10"
-            android:hint="enter new phonenumber"
+            android:layout_marginRight="30dp"
+            android:hint="새 전화번호 입력"
             android:inputType="textPersonName" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="507dp"
-        android:layout_height="159dp"
+        android:layout_height="123dp"
         android:layout_gravity="center"
         android:orientation="horizontal">
 
