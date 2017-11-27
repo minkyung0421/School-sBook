@@ -10,7 +10,7 @@
     android:weightSum="1">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="792dp"
         android:layout_height="255dp"
         android:orientation="vertical"
         android:weightSum="1">
@@ -35,15 +35,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.17"
+            android:layout_height="65dp"
             android:orientation="horizontal"
             android:weightSum="1">
 
             <TextView
                 android:id="@+id/yy"
                 android:layout_width="wrap_content"
-                android:layout_height="31dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="5dp"
@@ -64,7 +63,7 @@
             <TextView
                 android:id="@+id/mm"
                 android:layout_width="wrap_content"
-                android:layout_height="31dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="5dp"
@@ -109,13 +108,13 @@
             <TextView
                 android:id="@+id/ww"
                 android:layout_width="wrap_content"
-                android:layout_height="31dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="3dp"
                 android:layout_weight="0.07"
                 android:gravity="center"
-                android:text="TextView"
+                android:text="금"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
             <TextView

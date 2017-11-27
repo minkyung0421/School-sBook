@@ -104,131 +104,7 @@ public class Homepage_schoolbook extends AppCompatActivity {
                 finish();
             }
         });
-    }
-    protected void onStart() {
-        super.onStart();
-        //attaching value event listener
-        databasePhones.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
 
-                //clearing the previous artist list
-                phoneList.clear();
-
-                //iterating through all the nodes
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    //getting artist
-                    Phone phone = postSnapshot.getValue(Phone.class);
-                    //adding artist to the list
-                    phoneList.add(phone);
-                }
-
-                //creating adapter
-                PhoneList artistAdapter = new PhoneList(Homepage_schoolbook.this, phoneList);
-                //attaching adapter to the listview
-                listViewPhones.setAdapter(artistAdapter);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-    private void showUpdateDeleteDialog(final String PhoneId, String phonename) {
-
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = getLayoutInflater();
-        final View dialogView = inflater.inflate(R.layout.modify_phone, null);
-        dialogBuilder.setView(dialogView);
-
-        final EditText editTextName = (EditText) dialogView.findViewById(R.id.editTextname);
-        final EditText editTextPhone = (EditText) dialogView.findViewById(R.id.editTextphone);
-        final Button buttonUpdate = (Button) dialogView.findViewById(R.id.buttonUpdate);
-        final Button buttonDelete = (Button) dialogView.findViewById(R.id.buttonDelete);
-
-        dialogBuilder.setTitle("Updatinng Phones");
-        final AlertDialog b = dialogBuilder.create();
-        b.show();
-
-
-        buttonUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String name = editTextName.getText().toString().trim();
-                String phone = editTextPhone.getText().toString().trim();
-                if (!TextUtils.isEmpty(name)) {
-                    updatePhone(PhoneId, name, phone);
-                    b.dismiss();
-                }
-            }
-        });
-
-        buttonDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                deletePhone(PhoneId);
-                b.dismiss();
-            }
-        });
-
-    }
-    /*
-    * This method is saving a new artist to the
-    * Firebase Realtime Database
-    * */
-    private boolean deletePhone(String id) {
-        //getting the specified artist reference
-        Intent intent = getIntent();
-        String code  = intent.getStringExtra("code");
-        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("new Group").child(code).child("phone").child(id);
-
-        //removing artist
-        dR.removeValue();
-
-        Toast.makeText(getApplicationContext(), "전화번호 삭제 완료!", Toast.LENGTH_LONG).show();
-
-        return true;
-    }
-
-    private boolean updatePhone(String id, String name, String phone) {
-        //getting the specified artist reference
-        Intent intent = getIntent();
-        String code  = intent.getStringExtra("code");
-        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("new Group").child(code).child("phone").child(id);
-
-        //updating artist
-        Phone p = new Phone(id,name,phone);
-        dR.setValue(p);
-        Toast.makeText(getApplicationContext(), "전화번호 업데이트 완료!", Toast.LENGTH_LONG).show();
-        return true;
-    }
-    private void addPhone() {
-
-        //getting the values to save
-        String name = editName.getText().toString().trim();
-        String phone = editPhone.getText().toString().trim();
-
-
-        //checking if the value is provided
-        if (!TextUtils.isEmpty(phone)) {
-            Intent intent = getIntent();
-            String code  = intent.getStringExtra("code");
-            //creating an Artist Object
-            String id = databasePhones.push().getKey();
-            Phone p = new Phone(id, name, phone);
-            databasePhones.child(id).setValue(p);
-
-            //setting edittext to blank again
-            editName.setText("");
-            editPhone.setText("");
-
-            //displaying a success toast
-            Toast.makeText(this, "추가 완료", Toast.LENGTH_LONG).show();
-        } else {
-            //if the value is not given displaying a toast
-            Toast.makeText(this, "이름을 입력해 주세요!", Toast.LENGTH_LONG).show();
-        }
         FirebaseDatabase.getInstance().getReference("new Group").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -354,6 +230,132 @@ public class Homepage_schoolbook extends AppCompatActivity {
 
             }
         });
+    }
+    protected void onStart() {
+        super.onStart();
+        //attaching value event listener
+        databasePhones.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                //clearing the previous artist list
+                phoneList.clear();
+
+                //iterating through all the nodes
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    //getting artist
+                    Phone phone = postSnapshot.getValue(Phone.class);
+                    //adding artist to the list
+                    phoneList.add(phone);
+                }
+
+                //creating adapter
+                PhoneList artistAdapter = new PhoneList(Homepage_schoolbook.this, phoneList);
+                //attaching adapter to the listview
+                listViewPhones.setAdapter(artistAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+    private void showUpdateDeleteDialog(final String PhoneId, String phonename) {
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.modify_phone, null);
+        dialogBuilder.setView(dialogView);
+
+        final EditText editTextName = (EditText) dialogView.findViewById(R.id.editTextname);
+        final EditText editTextPhone = (EditText) dialogView.findViewById(R.id.editTextphone);
+        final Button buttonUpdate = (Button) dialogView.findViewById(R.id.buttonUpdate);
+        final Button buttonDelete = (Button) dialogView.findViewById(R.id.buttonDelete);
+
+        dialogBuilder.setTitle("Updatinng Phones");
+        final AlertDialog b = dialogBuilder.create();
+        b.show();
+
+
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = editTextName.getText().toString().trim();
+                String phone = editTextPhone.getText().toString().trim();
+                if (!TextUtils.isEmpty(name)) {
+                    updatePhone(PhoneId, name, phone);
+                    b.dismiss();
+                }
+            }
+        });
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deletePhone(PhoneId);
+                b.dismiss();
+            }
+        });
+
+    }
+    /*
+    * This method is saving a new artist to the
+    * Firebase Realtime Database
+    * */
+    private boolean deletePhone(String id) {
+        //getting the specified artist reference
+        Intent intent = getIntent();
+        String code  = intent.getStringExtra("code");
+        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("new Group").child(code).child("phone").child(id);
+
+        //removing artist
+        dR.removeValue();
+
+        Toast.makeText(getApplicationContext(), "전화번호 삭제 완료!", Toast.LENGTH_LONG).show();
+
+        return true;
+    }
+
+    private boolean updatePhone(String id, String name, String phone) {
+        //getting the specified artist reference
+        Intent intent = getIntent();
+        String code  = intent.getStringExtra("code");
+        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("new Group").child(code).child("phone").child(id);
+
+        //updating artist
+        Phone p = new Phone(id,name,phone);
+        dR.setValue(p);
+        Toast.makeText(getApplicationContext(), "전화번호 업데이트 완료!", Toast.LENGTH_LONG).show();
+        return true;
+    }
+    private void addPhone() {
+
+        //getting the values to save
+        String name = editName.getText().toString().trim();
+        String phone = editPhone.getText().toString().trim();
+
+
+        //checking if the value is provided
+        if (!TextUtils.isEmpty(phone)) {
+            Intent intent = getIntent();
+            String code  = intent.getStringExtra("code");
+            //creating an Artist Object
+            String id = databasePhones.push().getKey();
+            Phone p = new Phone(id, name, phone);
+            databasePhones.child(id).setValue(p);
+
+            //setting edittext to blank again
+            editName.setText("");
+            editPhone.setText("");
+
+            //displaying a success toast
+            Toast.makeText(this, "추가 완료", Toast.LENGTH_LONG).show();
+        } else {
+            //if the value is not given displaying a toast
+            Toast.makeText(this, "이름을 입력해 주세요!", Toast.LENGTH_LONG).show();
+        }
+
 
     }
 }
